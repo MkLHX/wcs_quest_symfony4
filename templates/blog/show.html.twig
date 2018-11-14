@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello to my Blog!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper {
+            margin: 1em auto;
+            max-width: 800px;
+            width: 95%;
+            font: 18px/1.5 sans-serif;
+        }
+
+        .example-wrapper code {
+            background: #F5F5F5;
+            padding: 2px 6px;
+        }
+    </style>
+
+    <div class="example-wrapper">
+        {% if slug is null %}
+            <h1>Article Sans Titre</h1>
+        {% else %}
+            <h1>{{ slug|replace({'-':' '})|capitalize }} ✅</h1>
+            <p>You are reading article called by {{ slug }} slug pattern</p>
+        {% endif %}
+        <ul>
+            <li><h1><a href="{{ path('blog') }}">Retour au Blog</a></h1></li>
+        </ul>
+    </div>
+{% endblock %}

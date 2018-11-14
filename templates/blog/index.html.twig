@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello to my Blog!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello to my Blog! ✅</h1>
+
+    {#This friendly message is coming from:#}
+    {#<ul>#}
+        {#<li>Your controller at <code><a href="{{ 'src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>#}
+        {#<li>Your template at <code><a href="{{ 'templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>#}
+    {#</ul>#}
+    <ul>
+        <li><h1><a href="{{ path('blog_show',{'slug':'mon-super-article'}) }}">Mon Super Article</a></h1></li>
+        <li><h1><a href="{{ path('blog_show',{'slug':'article-du-1-janvier-1970'}) }}">Article Du 1 Janvier 1970</a></h1></li>
+        {#<li><h1><a href="{{ path('blog_show') }}">/</a></h1></li>#}
+        {#<li><h1><a href="{{ path('blog_show',{'slug':'MonArticle'}) }}">MonArticle</a></h1></li>#}
+        {#<li><h1><a href="{{ path('blog_show',{'slug':'mon_article'}) }}">mon_article</a></h1></li>#}
+    </ul>
+</div>
+{% endblock %}
